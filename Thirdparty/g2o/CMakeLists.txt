@@ -176,3 +176,11 @@ g2o/stuff/string_tools.cpp
 g2o/stuff/property.cpp       
 g2o/stuff/property.h       
 )
+
+# Install the library
+install(
+  TARGETS
+    g2o
+  RUNTIME DESTINATION
+    lib
+)

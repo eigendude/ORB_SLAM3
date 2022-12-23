@@ -43,3 +43,10 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 add_library(DBoW2 SHARED ${SRCS_DBOW2} ${SRCS_DUTILS})
 target_link_libraries(DBoW2 ${OpenCV_LIBS})
 
+# Install the library
+install(
+  TARGETS
+    DBoW2
+  RUNTIME DESTINATION
+    lib
+)

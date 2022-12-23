@@ -134,6 +134,27 @@ if(realsense2_FOUND)
     )
 endif()
 
+# Install headers and library
+install(
+  DIRECTORY
+    include/
+  DESTINATION
+    include
+)
+install(
+  DIRECTORY
+    Thirdparty
+  DESTINATION
+    include
+  FILES_MATCHING PATTERN
+    "*.h*"
+)
+install(
+  TARGETS
+    ${PROJECT_NAME}
+  RUNTIME DESTINATION
+    lib
+)
 
 # Build examples
 
