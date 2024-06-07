@@ -42,10 +42,6 @@ find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
 find_package(realsense2)
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(EPOXY REQUIRED epoxy)
-pkg_check_modules(EGL REQUIRED egl)
-
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/include
@@ -53,8 +49,6 @@ ${PROJECT_SOURCE_DIR}/include/CameraModels
 ${PROJECT_SOURCE_DIR}/Thirdparty/Sophus
 ${EIGEN3_INCLUDE_DIR}
 ${Pangolin_INCLUDE_DIRS}
-${EPOXY_INCLUDE_DIRS}
-${EGL_INCLUDE_DIRS}
 )
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
@@ -129,8 +123,6 @@ ${PROJECT_SOURCE_DIR}/Thirdparty/DBoW2/lib/libDBoW2.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
 -lboost_serialization
 -lcrypto
-${EPOXY_LIBRARY_DIRS}
-${EGL_LIBRARY_DIRS})
 )
 
 # If RealSense SDK is found the library is added and its examples compiled
